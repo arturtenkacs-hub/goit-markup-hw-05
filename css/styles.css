@@ -1,4 +1,5 @@
 /* -------------------------GLOBAL STYLES----------------------------- */
+
 p, h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
@@ -680,9 +681,17 @@ box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
     width: 100%;
     height: 100%;
     background: rgba(46, 47, 66, 0.4);
-    /* z-index: 1000; */
+    z-index: 999;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 250ms ease-in-out;
 }
 
+.overlay.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
 
 
 .modal {
@@ -733,12 +742,20 @@ box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
         margin-bottom: 16px
 }
 
-.modal-input{
+.modal-input {
     width: 100%;
     margin-bottom: 8px;
     border: 1px solid rgba(46, 47, 66, 0.4);
         border-radius: 4px;
         height: 40px;
+        padding-left: 42px;
+        outline: transparent;
+        transition-duration: 250ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-input:focus {
+    border-color: #404bbf;
 }
 
 
@@ -785,19 +802,134 @@ textarea::placeholder {
         color: #2e2f42;
         border: 1px solid #8e8f99;
         border-radius: 4px;
+        margin-bottom: 16px;
+}
+
+.modal-checkbox {
+    border-radius: 2px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    display: flex;
+        align-items: center;
 }
 
 
-.modal-checkbox {
+.modal-label-checkbox {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
     color: #8e8f99;
+    
+    /* display: flex;
+    align-items: center; */
 }
 
 .modal-checkbox-wrapper {
-    width: 360px;
-    height: 16px;
+    display: flex;
+        align-items: center;
+        gap: 8px;
+}
+
+.checkbox-label-span {
+    line-height: 1.33333;
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+        color: #4d5ae5;
+        cursor: pointer;
+}
+
+
+
+
+.modal-send-button {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+        font-size: 16px;
+    
+        /* line-height: 24px; */
+        line-height: 1.5;
+        letter-spacing: 0.04em;
+        text-align: center;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+            padding: 16px 32px;
+            width: 169px;
+            height: 56px;
+            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+            background: #4d5ae5;
+            display: block;
+            margin: 0 auto;
+            margin-top: 24px;
+}
+
+
+
+.person-wrapper {
+    position: relative;
+    
+}
+
+.svg-modal-person {
+    position: absolute;
+    left: 19px;
+    top: 11px;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-input:focus ~ .after-wrapper .svg-modal-person {
+    fill: #404bbf;
+}
+
+.after-wrapper::after {
+    content: "";
+    position: absolute;
+    border: 1.25px solid #2e2f42;
+        width: 0;
+        height: 18px;
+        background-color: #2e2f42;
+        top: 11px;
+        left: 38px;
+}
+
+
+
+.mobile-wrapper {
+    position: relative;
+    
+}
+
+
+.svg-modal-phone {
+    position: absolute;
+    left: 19px;
+    top: 8px;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-input:focus + .svg-modal-phone {
+    fill: #404bbf;
+}
+
+.email-wrapper {
+    position: relative;
+    
+}
+.svg-modal-email {
+    position: absolute;
+    left: 19px;
+    top: 8px;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-input:focus + .svg-modal-email {
+    fill: #404bbf;
 }
