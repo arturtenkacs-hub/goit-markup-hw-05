@@ -670,9 +670,12 @@ box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
 
 .footer-form-div {
     margin-left: 80px;
-    margin-top: auto;
-    margin-bottom: auto;
-    max-width: ;width: 453px;
+    max-width: 453px;
+}
+
+.footer-form {
+    display: flex;
+    gap: 24px;
 }
 
 .footer-input {
@@ -684,6 +687,13 @@ box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
         outline: transparent;
         color: white;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+        transition-property: border-color;
+        transition-duration: 250ms;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-input:hover {
+    border-color: #31d0aa;
 }
 
 .footer-form-title {
@@ -695,6 +705,7 @@ box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
         line-height: 1.5;
         letter-spacing: 0.02em;
         color: #fff;
+        margin-bottom: 16px;
 }
 
 .footer-email-submit-btn {
@@ -713,7 +724,24 @@ box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
             letter-spacing: 0.04em;
             text-align: center;
             color: #fff;
-            margin-left: 24px;
+            cursor: pointer;
+            position: relative;
+            transition-property: background-color;
+            transition-duration: 250ms;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.footer-email-submit-btn:hover {
+    background-color: #31d0aa;
+}
+
+.footer-btn-icon {
+    fill: #fff;
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 
