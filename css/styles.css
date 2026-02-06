@@ -995,7 +995,16 @@ textarea::placeholder {
             display: block;
             margin: 0 auto;
             margin-top: 24px;
+            transition-property: background-color;
+                transition-duration: 250ms;
+                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.modal-send-button:active {
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+    background: #404bbf;
+}
+
 
 
 
